@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (response) {
         let pokemons = response.data.results;
 
-        let list = document.querySelector(".list");
+        let list = document.querySelector(".pokemon-list");
 
         list.innerHTML = "";
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(pokemon);
 
           let pokemon_div = `
-                    <div class="col-4">
+                    <div class="col-sm-4 text-bg-primary">
                     <h2>${pokemon.name}</h2>
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${until + 1}.png">
                     </div>
