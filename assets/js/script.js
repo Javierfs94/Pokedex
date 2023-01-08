@@ -17,10 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  let searchBtn = document.querySelector('.search');
-  let input = document.querySelector('.input');
-  searchBtn.addEventListener('click', function() {
-    let name = input.value; 
+  let findBtn = document.querySelector('#find');
+  let input = document.querySelector('#poke-input');
+
+  findBtn.addEventListener("click", function() {
+    var name = input.value; 
    
     url2 = `https://pokeapi.co/api/v2/pokemon/${name}`;
     pokemonPrint();    
@@ -56,26 +57,43 @@ function requestPokemons() {
 }
 
 function pokemonPrint() {
+
+  
   axios.get(url2)
      .then(function (Response) {
+      let error = document.querySelector('#error');
+
+      error.remove();
 
         let infod = Response.data;
-        let div_der = document.querySelector('.poke-found');       
+        let div = document.querySelector('.poke-found');       
         const box = document.createElement("div");
 
          box.innerHTML = `
-         <div class="info text-center col-sm-4 text-bg-primary">
+         <div class="justify-content-center text-bg-primary">
           <h2>${infod.name}</h2>            
           <img class="imagen-bus" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${infod.id}.png">
           <p><span>Type: </span><span>${infod.types[0].type.name}</span></p>
           </div>
         `;
         
-         box.classList.add("box");
-         div_der.appendChild(box);
+         box.className = 'box';
+         div.appendChild(box);
 
      })
      .catch(function (error) {
+
+      let div = document.querySelector('.poke-found');       
+
+      const p = document.createElement("p");
+
+      p.innerHTML = `Error: Pokemon not found`;
+     
+      p.setAttribute('id','error');
+      p.style.color="red";
+
+      div.appendChild(p);
+
       console.log('Request error');
      });
 }
