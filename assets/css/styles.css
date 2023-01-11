@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding-top: 30px;
+  background-color: lightgray;
 }
 
 h1 {
@@ -12,45 +13,4 @@ h1 {
   margin: 0;
 }
 
-/* estilos div información pokemon */
-/* .info {
-  margin-top: 40px;
-  border-style: double;
-  border-width: 4px;
-  background-color: lightgrey;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-} */
 
-.imagen-bus {
-  width: 300px;
-  height: 300px;
-}
-.list {
-  margin-bottom: 30px;
-}
-.request {
-  margin-bottom: 130px;
-}
-
-.poke-found {
-  background-color: lightgray;
-}
-
-.search {
-  background-color: lightgray;
-  margin-left: 5px;
-  width: 30%;
-  border-radius: 5px;
-  height: 40px;
-  border: none;
-}
-
-.search:hover {
-  border: 1px solid black;
-  cursor: pointer;
-}
