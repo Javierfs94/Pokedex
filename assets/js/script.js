@@ -17,15 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  let findBtn = document.querySelector('#find');
-  let input = document.querySelector('#poke-input');
-
-  findBtn.addEventListener("click", function() {
-    var name = input.value; 
-   
-    url2 = `https://pokeapi.co/api/v2/pokemon/${name}`;
-    pokemonPrint();    
-  });
 
 });
 
@@ -33,15 +24,15 @@ function requestPokemons() {
   axios
     .get(url)
     .then(function (response) {
-      let pokemons = response.data.results;
+      var pokemons = response.data.results;
 
-      let list = document.querySelector(".pokemon-list");
+      var list = document.querySelector(".pokemon-list");
 
       list.innerHTML = "";
 
       pokemons.forEach(function (pokemon, until) {
 
-        let pokemon_div = `
+        var pokemon_div = `
                   <div class="col-sm-4 text-bg-primary">
                   <h2>${pokemon.name}</h2>
                   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${until + 1}.png">
@@ -54,46 +45,4 @@ function requestPokemons() {
     .catch(function (error) {
       console.log("Request error");
     });
-}
-
-function pokemonPrint() {
-
-  
-  axios.get(url2)
-     .then(function (Response) {
-      let error = document.querySelector('#error');
-
-      error.remove();
-
-        let infod = Response.data;
-        let div = document.querySelector('.poke-found');       
-        const box = document.createElement("div");
-
-         box.innerHTML = `
-         <div class="justify-content-center text-bg-primary">
-          <h2>${infod.name}</h2>            
-          <img class="imagen-bus" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${infod.id}.png">
-          <p><span>Type: </span><span>${infod.types[0].type.name}</span></p>
-          </div>
-        `;
-        
-         box.className = 'box';
-         div.appendChild(box);
-
-     })
-     .catch(function (error) {
-
-      let div = document.querySelector('.poke-found');       
-
-      const p = document.createElement("p");
-
-      p.innerHTML = `Error: Pokemon not found`;
-     
-      p.setAttribute('id','error');
-      p.style.color="red";
-
-      div.appendChild(p);
-
-      console.log('Request error');
-     });
 }
