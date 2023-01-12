@@ -33,7 +33,7 @@ function requestPokemons() {
       pokemons.forEach(function (pokemon, until) {
 
         var pokemon_div = `
-                  <div class="col-sm-4 text-bg-primary">
+                  <div class="pokemon col-sm-4 text-bg-primary">
                   <h2>${pokemon.name}</h2>
                   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${until + 1}.png">
                   </div>
