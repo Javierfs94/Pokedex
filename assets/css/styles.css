@@ -5,15 +5,16 @@
 body {
   margin: 0;
   padding-top: 30px;
-  background-color: lightgray;
+  background-color: lightcoral;
 }
 
 .pokemon {
-  transition: box-shadow .3s;
-  border-radius:10px;
+  transition: box-shadow 0.3s;
+  border-radius: 10px;
+  background-color: #f54444;
   border: 1px solid #ccc;
 }
 
 .pokemon:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
