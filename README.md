@@ -7,6 +7,7 @@ You can display all Pokémon up to the selected generation using the buttons.
 - HTML
 - CSS
 - JavaScript
+- Bootstrap
 
  ## Project page
 You can view the project on this page [Pokedex](https://javierfs94.github.io/Pokedex/)
