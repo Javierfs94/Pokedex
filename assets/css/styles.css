@@ -18,3 +18,13 @@ body {
 .pokemon:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
+
+
+footer > .container{
+  background-color: #b9452b;
+}
+
+
+#sub-footer{
+  background-color: #a1432d;
+}
